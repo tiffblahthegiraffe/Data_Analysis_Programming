@@ -1,4 +1,5 @@
-##Wonsuk Lee
+## Wonsuk Lee
+## Assignment for 
 
 import random
 
@@ -73,26 +74,33 @@ while True:
     
     print ""
     print "Time to play Rock, Paper, Scissors!"
-    print "1 for Rock.\n2 for Paper.\n3 for Scissor.\n4 to quit!"
+    print "1 for Rock.\n2 for Paper.\n3 for Scissor.\nAny other key to Quit!"
     
-    playerThrow = int(raw_input("What will you throw out? "))
+    playerThrow = raw_input("What will you throw out?: ")
     
-    if playerThrow == 1:
+    if playerThrow == "1":
+        playerThrow = int(playerThrow)
         rockCounter += 1
         playCounter += 1
         winCounter += outcome(playerThrow, compThrow)
         print "You have played", playCounter, "times this session."
-    elif playerThrow == 2:
+    elif playerThrow == "2":
+        playerThrow = int(playerThrow)
         paperCounter += 1
         playCounter += 1
         winCounter += outcome(playerThrow, compThrow)
         print "You have played", playCounter, "times this session."
-    elif playerThrow == 3:
+    elif playerThrow == "3":
+        playerThrow = int(playerThrow)
         scissorCounter += 1
         playCounter += 1
         winCounter += outcome(playerThrow, compThrow)
         print "You have played", playCounter, "times this session."
     else:
         print "You played", playCounter, "times.", "You win", winCounter, "times!"
-        break
-
+        print "Invalid input. Did you want to quit?"
+        invalidChecker = raw_input("Enter 1 to continue. Anything else to quit: ")
+        if invalidChecker == "1"1:
+            print "Restarting Game!"
+        else:
+            break
