@@ -19,7 +19,7 @@ def weightedDM(rock, paper, scissor):
     
     dice = random.randint(1, 100)
     
-    if (abs(float(rockStat) - float(paperStat)) <= .1 and (scissorStat <= .2)):
+    if (abs(float(rockStat) - float(paperStat))) <= .1 and (scissorStat <= .2):
         compThrow = 2
     elif dice <= rockProb:
         compThrow = 1
@@ -27,7 +27,7 @@ def weightedDM(rock, paper, scissor):
         compThrow = 2
     else:
         compThrow = 3
-    print str(rockStat), str(paperStat), str(scissorStat)
+    # print str(rockStat), str(paperStat), str(scissorStat)
     return compThrow
 
 def outcome(playerThrow, compThrow):
