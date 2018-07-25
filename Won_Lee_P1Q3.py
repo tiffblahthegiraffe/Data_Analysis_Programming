@@ -3,6 +3,8 @@
 Created on Wed Jul 25 13:00:03 2018
 
 @author: Study Won
+
+THIS VERSION DOES NOT STRIP OUT THE AUTHOR'S NAME
 """
 
 
@@ -15,13 +17,16 @@ def main():
         lines = file.readlines() #list of all lines in the file
         for x in range (0, len(lines), 2):
             allquotes.append("\"" + lines[x].rstrip() + " -" + lines[x+1].rstrip() + "\"") # Solves A
-            
+    """        
     print (wordsFromFullQuote(allquotes[1])) # Solves B
     print (dictionaryFromAllQuotes()) # Solves C
     print (reverseDictionaryFromAllQuotes()) # Solves D
-    print (getTfIdf("days", allquotes[1])) # Solves E
+    """
+    print (getTfIdf("roads", allquotes[1])) # Solves E
+    """
     print (searchByWord("days")) # Solves F
     print (searchByWordList(["days", "world", "i"])) # Solves G
+    """
     
     return
 
@@ -99,8 +104,7 @@ def getTf(word, quote):
     wordcount = []
     for word in quote:
         wordcount.append(quote.count(word))
-        
-    return quote.count(word) / max(wordcount) #term frequency = occurences of this word / occurences of most common word
+    return quote.count(word) / float(max(wordcount)) #term frequency = occurences of this word / occurences of most common word
 
 
 #gets the IDF of a word
