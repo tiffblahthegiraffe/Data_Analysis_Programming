@@ -10,11 +10,33 @@ allquotes = [] #list of all quotes
 
 #reads the file and gives us a list of full quotes
 def main():
+    
     with open('quotes.txt') as file:
         lines = file.readlines() #list of all lines in the file
         for x in range (0, len(lines), 2):
-            allquotes.append("\"" + lines[x].rstrip() + " -" + lines[x+1].rstrip() + "\"")
+            allquotes.append("\"" + lines[x].rstrip() + " -" + lines[x+1].rstrip() + "\"") # Solves A
+            
+    print (wordsFromFullQuote(allquotes[1])) # Solves B
+    print (dictionaryFromAllQuotes()) # Solves C
+    print (reverseDictionaryFromAllQuotes()) # Solves D
+    print (getTfIdf("days", allquotes[1])) # Solves E
+    print (searchByWord("days")) # Solves F
+    print (searchByWordList(["days", "world", "i"])) # Solves G
+    
     return
+
+"""
+    with open('quotes.txt') as file:
+        i = 0
+        lines = file.readlines()
+        while i < len(lines)-1:
+            line = str(lines[i]+ " - " +lines[i+1])
+            line = line.replace('\r\n','')
+            line=line.replace('\n','')
+            allquotes.append(line)
+            i += 2
+    print allquotes
+"""
 
 #splits a quote into words
 def splitQuote(fullquote):
@@ -120,3 +142,4 @@ def searchByWordList(wordlist):
 #run the main function automatically
 if __name__ == "__main__":
     main()
+    
