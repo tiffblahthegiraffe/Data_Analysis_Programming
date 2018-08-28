@@ -16,6 +16,7 @@ In this assignment, I analyzed restaurant inspections in New York City, starting
 ***Introduction of the data***
 Suppose we have a bunch of URLs and we want to know their adult-rating (i.e., is the url P, or G, or X, or R). This task is difficult for computers, but easy for humans, and this has led to the growth of crowdsourcing: geta bunch of humans to give ratings to urls, but use automated techniques to figure out how much to trust each person's ratings. We are going to use the data from a paper by Ipeirotis et al. available here. This details an experiment run on Amazon's Mechanical Turk crowd-sourcing system. They ask a bunch of raters (called "turks") to rate several urls, but they already know the answers (the true categories) for a few urls, called the "gold set". The ratings of the turks on the gold set thus allows us to judge their accuracy.<br>
 In this assignment, we have to read in two dataset: gold.txt and labels.txt, and by merging, reshaping them, we then generate some insights according to the questions.
+<br>
 
 **Final Project**<br>
 For the final project, we analyzed NYPD collision data from OpenNYC data.<br>
